@@ -71,13 +71,24 @@ const testData = [
       }         
 ];
 
-const CardList = () => {
+const CardList = (props) => {
     return(
         <div>
-            {testData.map(profile => <Card {...profile}/>)}
+            {props.profiles.map(profile => <Card {...profile}/>)}
         </div>
     )
 };
+
+class Form extends React.Component{
+    render(){
+        return(
+            <form action=''>
+                <input type="text" placeholder='Github username'/>
+                <button>Add Card</button>
+            </form>
+        )
+    }
+}
 
 class Card extends React.Component{
     render(){
@@ -95,12 +106,18 @@ class Card extends React.Component{
 }
 
 class AppShell extends React.Component{
-
+    constructor(props){
+        super(props);
+        this.state={
+            profiles: testData,
+        }
+    }
     render(){
         return(
             <div>
                 <div className='header'>The Github Cards App</div>
-                <CardList/>
+                <Form/>
+                <CardList profiles={this.state.profiles}/>
             </div>
         )
     }
