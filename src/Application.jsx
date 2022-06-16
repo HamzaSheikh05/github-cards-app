@@ -106,11 +106,8 @@ class Card extends React.Component{
 }
 
 class AppShell extends React.Component{
-    constructor(props){
-        super(props);
-        this.state={
-            profiles: testData,
-        }
+    state = {
+        profiles: testData,
     }
     render(){
         return(
