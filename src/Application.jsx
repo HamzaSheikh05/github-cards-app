@@ -74,14 +74,14 @@ const testData = [
 const CardList = () => {
     return(
         <div>
-            <Card/>
+            {testData.map(profile => <Card {...profile}/>)}
         </div>
     )
 };
 
 class Card extends React.Component{
     render(){
-        const profile = testData[1];
+        const profile = this.props;
         return(
             <div className='github-profile' style={{ margin: '1em' }}>
                 <img src={profile.avatar_url} style={{ width: '75px' }}/>
