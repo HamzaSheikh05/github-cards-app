@@ -1,10 +1,10 @@
-import logo from './logo.svg';
 import './App.css';
+import AppShell from './Application';
 
 function App() {
   return (
     <div className="App">
-      <h1>hello worlds</h1>
+      <AppShell/>
     </div>
   );
 }
